@@ -1,1 +1,1 @@
-# JavaFulCourse
+# JavaFullCourse
