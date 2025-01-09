@@ -1,4 +1,5 @@
 
+import java.net.SecureCacheResponse;
 
 /*
 public class Main {
@@ -841,6 +842,7 @@ public class Main {
 }
 */
 
+/*
 public class Main {
 
     public static void main(String[] args) {
@@ -848,9 +850,9 @@ public class Main {
         //inheritance = the process where one class acquires,
         //              the attributes and methods of another.
 
-        //Car car = new Car();
+        Car car = new Car();
 
-        //car.go();
+        car.go();
 
         Bicycle bike = new Bicycle();
 
@@ -858,5 +860,119 @@ public class Main {
 
         System.out.println(car.doors);
         System.out.println(bike.pedals);
+    }
+}
+*/
+
+/*
+public class Main {
+
+    public static void main(String[] args) {
+
+        // method overriding =  Declaring a method in sub class,
+        //                      which is already present in parent class.
+        //                      done so that a child class can give its own implementation
+        Animal animal = new Animal();
+        Dog dog = new Dog();
+        
+        dog.speak();
+    }
+}
+*/
+
+/*
+public class Main {
+
+    public static void main(String[] args) {
+
+        //super = keyword refers to the superclass (parent) of an object
+        //        very similar to the "this" keyword
+
+        Hero hero1 = new Hero("Batman",42,"$$$");
+        Hero hero2 = new Hero("Superman",43, "everything");
+
+        System.out.println(hero2.toString());
+    }
+}
+*/
+
+/*
+public class Main {
+
+    public static void main(String[] args) {
+
+        // abstract = abstract classes cannot be instantiated, but they can have a subclass
+        //            abstract methods are declared without an implementation
+
+        //Vehicle vehicle = new Vehicle();
+        Car car = new Car();
+
+        car.go();
+    }
+}
+*/
+
+/*
+public class Main {
+
+    public static void main(String[] args) {
+        
+        // Encapsulation = attributes of a class will be hidden or private,
+        //                 Can be accessed only through methods (getters & setters)
+        //                 You should make attributes private if you have no reason to make them
+
+        Car car = new Car("Chevrolet","Camaro",2021);
+
+        car.setYear(2022);
+        
+        System.out.println(car.getMake());
+        System.out.println(car.getModel());
+        System.out.println(car.getYear());
+
+        
+    }
+}
+*/
+
+/*
+public class Main {
+
+    public static void main(String[] args) {
+
+        // Objects - In java, an object is an instance of a class, 
+        also known as a blueprint that defines the structure and behavior of objects.
+        //
+
+        Car car1 = new Car("Chevrolet","Camaro",2021);
+        //Car car2 = new Car("Ford","Mustang",2022);
+        //car2.copy(car1);
+        Car car2 = new Car(car1);
+
+        System.out.println(car1);
+        System.out.println(car2);
+        System.out.println();
+        System.out.println(car1.getMake());
+        System.out.println(car1.getModel());
+        System.out.println(car1.getYear());
+        System.out.println();
+        System.out.println(car2.getMake());
+        System.out.println(car2.getModel());
+        System.out.println(car2.getYear());
+
+    }
+}
+*/
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        // interface = a template that can be applied to a class.
+        //             similar to inheritance, but specifies what a class has/must do.
+        //             classes can apply more than one interface, inheritance is limited to 1 super
+        
+        Rabbit rabbit = new Rabbit();
+
+        System.out.println("The Rabbit is fleeing");
     }
 }
