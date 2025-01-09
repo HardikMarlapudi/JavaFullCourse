@@ -1,3 +1,4 @@
-public class Hawk {
+
+public class Hawk implements Predator {
     
 }
