@@ -1,6 +1,4 @@
 
-import java.net.SecureCacheResponse;
-
 /*
 public class Main {
    public static void main(String[] args) {
@@ -210,7 +208,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //switch = statement that allows a variable to be treated for equality against a list of values
+        //switch = A switch method is a statement that allows a variable to be treated for equality against a list of values
 
         String day = "Saturday";
 
@@ -963,6 +961,7 @@ public class Main {
 }
 */
 
+/*
 public class Main {
 
     public static void main(String[] args) {
@@ -971,8 +970,181 @@ public class Main {
         //             similar to inheritance, but specifies what a class has/must do.
         //             classes can apply more than one interface, inheritance is limited to 1 super
         
-        Rabbit rabbit = new Rabbit();
+        Fish fish = new Fish();
 
-        System.out.println("The Rabbit is fleeing");
+        fish.hunt();
+        fish.flee();
+
     }
+    
+}
+*/
+
+/*
+public class Main {
+
+    public static void main(String[] args) {
+
+        // polymorphism = greek word for poly-"many", morph-"form"
+        //                The ability of an object to identify as more than one type
+
+        Car car = new Car();
+        Bicycle bicycle = new Bicycle();
+        Boat boat = new Boat();
+
+        Vehicle [] racers = {car,bicycle,boat};
+        
+       for(Vehicle x : racers) {
+            x.go();
+       }
+
+    }
+}
+*/
+
+/*
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        // polymorphism = many shapes/forms
+        // dynamic = after compilation (during runtime)
+
+        // ex. A Corvette is a: corvette, and a car, and a vehicle, and a object
+
+        Scanner scanner = new Scanner(System.in);
+        Animal animal;
+
+        System.out.println("What animal do you want?");
+        System.out.println("(1=dog) or (2=cat): ");
+        int choice = scanner.nextInt();
+
+        if(choice==1) {
+            animal = new Dog();
+            animal.speak();
+        }
+        else if(choice==2) {
+            animal = new Cat();
+            animal.speak();
+        }
+        else {
+            animal = new Animal();
+            System.out.println("That choice was invalid!!! animal goes *brrrr*");
+        }
+    }
+}
+*/
+
+/*
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        // exception = an event that occurs during the exception of a program that,
+        //              disrupts the normal flow of instructions.
+
+        Scanner scanner = new Scanner(System.in);
+
+        try {
+
+            System.out.println("Enter a whole number to divide: ");
+            int x = scanner.nextInt();
+
+            System.out.println("Enter a whole number to divide by: ");
+            int y = scanner.nextInt();
+
+            int z = x/y;
+
+            System.out.println("result: " + z);
+
+        }
+        catch(ArithmeticException e) {
+            System.out.println("You can't divide by zero! IDIOT!");
+        }
+        catch(InputMismatchException e) {
+            System.out.println("PLEASE ENTER A NUMBER OMFG!!!");
+        }
+        catch(Exception e) {
+            System.out.println("Something went wrong");
+        }
+        finally{
+            scanner.close();
+        }
+
+    }
+}
+*/
+
+/*
+import java.io.File;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        // file = An abstract representation of file and directory path names
+
+        File file  = new File("secret_message.txt");
+
+        if(file.exists()) {
+            System.out.println("That file exists :)");
+            System.out.println(file.getPath());
+            System.out.println(file.getAbsolutePath());
+            System.out.println(file.isFile());
+            file.delete();
+            
+        }
+
+        else {
+            System.out.println("That file doesn't exists (:");
+        }
+    }
+}
+*/
+
+/*
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+    try {
+        FileWriter writer = new FileWriter("poem.txt");
+        writer.write("Roses are red \nVioletes are blue \nBooty Booty Booty Booty \nRockin' everywhere!");
+        writer.append("\n(A poem by Hardik)");
+        writer.close();
+    }
+
+    catch (IOException e) {
+
+        e.printStackTrace();
+        }
+    }
+}
+*/
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
+public class Main {
+
+    public static void main(String[] args) throws FileNotFoundException {
+        
+        // FileWriter = read the contents of a file as a stream of characters. One by one
+        //              read() returns an int value which contains the byte value
+        //              when read() returns -1, there is no more data to be read
+
+        FileReader reader = new FileReader("art.txt");
+    } catch (FileNotFoundException e) {
+
+        e.printStackTrace();
+    } 
+        
 }
