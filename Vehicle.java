@@ -1,4 +1,5 @@
 
+/*
 public class Vehicle {
 
     double speed;
@@ -10,4 +11,14 @@ public class Vehicle {
     void stop() {
         System.out.println("This vehicle is stopped");
     }
+}
+*/
+
+public class Vehicle {
+
+    public void go() {
+        
+    }
+
+    
 }
