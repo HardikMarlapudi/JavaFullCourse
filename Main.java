@@ -1215,16 +1215,14 @@ public class Main {
 
 // Video 49: Creating a GUI in java
 
-import java.awt.Color;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-
-
+/*
 public class Main {
 
     public static void main(String[] args) {
 
         // JFrame = a GUI window to add components to
+
+        /*
 
         JFrame jframe = new JFrame(); // creates a frame
         jframe.setTitle("JFrame title goes here"); //sets title of frame
@@ -1235,7 +1233,23 @@ public class Main {
 
         ImageIcon image = new ImageIcon("logo.png"); //create an image icon
         jframe.setIconImage(image.getImage()); //change icon of the frame
-        jframe.getContentPane().setBackground(new Color(5,45,45)); // change of color background
+        jframe.getContentPane().setBackground(new Color(0x123456)); // change of color background
+
+        
+
+        MyFrame myFrame = new MyFrame();
+
     }
 
+}
+*/
+
+public class Main {
+
+    public static void main(String[] args) {
+        
+        // JLabel = a GUI display area for a string of text, an image, or both
+
+
+    }
 }
