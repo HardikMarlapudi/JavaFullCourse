@@ -1130,21 +1130,112 @@ public class Main {
 }
 */
 
+/*
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 
 public class Main {
 
     public static void main(String[] args) throws FileNotFoundException {
         
-        // FileWriter = read the contents of a file as a stream of characters. One by one
+        // FileReader = read the contents of a file as a stream of characters. One by one
         //              read() returns an int value which contains the byte value
-        //              when read() returns -1, there is no more data to be read
+        //              when read() return -1, there is no more data to be read
 
-        FileReader reader = new FileReader("art.txt");
-    } catch (FileNotFoundException e) {
+        try {
+            FileReader reader = new FileReader("art.txt");   
+            int data = reader.read();
+            while(data != -1) {
+                System.out.println((char) data);
+                data = reader.read();
+            }
+            reader.close();
 
-        e.printStackTrace();
-    } 
+        } catch (FileNotFoundException e) {
+            
+            e.printStackTrace();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
         
+}
+*/
+
+// Video part 48: audio in java
+
+/*
+import java.io.File;
+import java.io.IOException;
+import java.util.Scanner;
+import javax.sound.sampled.*;
+
+public class Main {
+
+    public static void main(String[] args) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
+
+        Scanner scanner = new Scanner(System.in);
+
+        File file = new File("Dopamina_Inaban.wav");
+        AudioInputStream audioStream = AudioSystem.getAudioInputStream(file);
+        Clip clip = AudioSystem.getClip();
+        clip.open(audioStream);
+
+        String response = "";
+
+
+        while (!response.equals("Q")) { 
+            System.out.println("P = play, S = stop, R = reset, Q = quit");
+            System.out.print("Enter your choice: ");
+
+            response = scanner.next();
+            response = response.toUpperCase();
+
+            switch(response) {
+               case("P"): clip.start();
+               break;
+               case("S"): clip.stop();
+               break;
+               case("R"): clip.setMicrosecondPosition(0);
+               break;
+               case("Q"): clip.close();
+               break;
+               default: System.out.println("Not a valid response"); 
+            }
+        }
+
+        clip.start();
+
+    }
+}
+*/
+
+// Video 49: Creating a GUI in java
+
+import java.awt.Color;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        // JFrame = a GUI window to add components to
+
+        JFrame jframe = new JFrame(); // creates a frame
+        jframe.setTitle("JFrame title goes here"); //sets title of frame
+        jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        jframe.setResizable(true); // prevent to be resized
+        jframe.setSize(420,420); //sets the x-dimesion, and y-dimesion of frame
+        jframe.setVisible(true); //make frame visible
+
+        ImageIcon image = new ImageIcon("logo.png"); //create an image icon
+        jframe.setIconImage(image.getImage()); //change icon of the frame
+        jframe.getContentPane().setBackground(new Color(5,45,45)); // change of color background
+    }
+
 }
