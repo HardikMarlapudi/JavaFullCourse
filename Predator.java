@@ -1,5 +1,5 @@
 
 public interface Predator {
 
-    void hunt 
+    void hunt();
 }

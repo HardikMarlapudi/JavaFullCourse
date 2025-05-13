@@ -1,5 +1,4 @@
 
-import java.net.SecureCacheResponse;
 
 /*
 public class Main {
@@ -963,16 +962,176 @@ public class Main {
 }
 */
 
+/*
 public class Main {
 
     public static void main(String[] args) {
 
+        
         // interface = a template that can be applied to a class.
         //             similar to inheritance, but specifies what a class has/must do.
         //             classes can apply more than one interface, inheritance is limited to 1 super
         
-        Rabbit rabbit = new Rabbit();
+        // Hawk hawk = new Hawk();
 
-        System.out.println("The Rabbit is fleeing");
+        // hawk.flee();
+
+        Fish fish = new Fish();
+
+        fish.hunt();
+        fish.flee();
+        
     }
+}
+*/
+
+/*
+public class Main {
+
+    public static void main(String[] args) {
+
+        // polymorphism = greek word for poly-"many", morph-"form"
+        //                The ability of an object to identify as more than one type
+
+        Car car = new Car();
+        Bicycle bicycle = new Bicycle();
+        Boat boat = new Boat();
+
+        Vehicle[] racers = {car, bicycle, boat};
+
+        car.go();
+        bicycle.go();
+        boat.go();
+
+        for (Vehicle x : racers) {
+            x.go();
+        }
+
+    }
+}
+*/
+
+/*
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        // polymorphism = many shapes/forms
+        // dynamic = after compilation (during runtime)
+
+        // ex. A corvette is a: corvette, and a car and a vehicle, and an object
+
+        Scanner scanner = new Scanner(System.in);
+        Animal animal;
+
+        System.out.println("What animal do you want?");
+        System.out.print("1=dog 2=cat: ");
+        int choice = scanner.nextInt();
+
+        if(choice==1){
+            animal = new Dog();
+            animal.speak();
+        }
+        else if(choice==2){
+            animal = new Cat();
+            animal.speak();
+        }
+        else {
+            animal = new Animal();
+            System.out.println("That choice was invalid");
+            animal.speak();
+        }
+    }
+}
+*/
+
+/*
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Main {
+
+    private static Scanner scanner;
+    
+        public static void main(String[] args) {
+            
+        // exception = an event that occurs during the execution of a program that,
+        //             disrupts the normal flow of instructions
+    
+    try {
+        Scanner scanner = new Scanner(System.in);
+    
+        System.out.println("Enter a whole number to divide: ");
+        int x = scanner.nextInt();
+    
+        System.out.println("Enter a whole number to divide by: ");
+        int y = scanner.nextInt();
+    
+        int z = x/y;
+    
+        System.out.println("result: " + z);
+        scanner.close();
+            }
+            catch(ArithmeticException e){
+                System.out.println("You can't divide by 0! Dummy!");
+            }
+            catch(InputMismatchException e){
+                System.out.println("Please enter a number OMFG!!!");
+            }
+            catch(Exception e){
+                System.out.println("Something went wrong");
+            }
+            finally {
+                scanner.close();
+        }
+    }
+}
+*/
+
+/*
+import java.io.File;
+
+public class Main {
+
+    public static void main(String[] args) {
+        
+        // file = An abstract representation of file and directory pathnames
+
+        File file = new File("secret_message.txt");
+
+        if (file.exists()) {
+            System.out.println("That file exists! :O!");
+            System.out.println(file.getPath());
+            System.out.println(file.getAbsolutePath());
+            System.out.println(file.isFile());
+            file.delete();
+        }
+        else {
+            System.out.println("That file doesn't exist :(");
+        }
+    }
+}
+*/
+
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class Main {
+
+    // FileWriter in java is a class used for writing character-based data to files. It
+    // extends the OutputStreamWriter class and is part of the java.io.package. 
+
+    public static void main(String[] args) {
+        
+        try {
+        FileWriter writer = new FileWriter("poem.txt");
+        writer.write("Roses are Red \nViolets are blue \nBooty booty booty \nRockin");
+        writer.append("\n(A poem by bro)");
+        writer.close();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
 }

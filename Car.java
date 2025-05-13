@@ -46,7 +46,7 @@ public class Car {
 
 public class Car extends Vehicle {
 
-
-    int wheels = 4;
-    int doors = 4;
+    public void go() {
+        System.out.println("The driver is driving the car.");
+    }
 }
